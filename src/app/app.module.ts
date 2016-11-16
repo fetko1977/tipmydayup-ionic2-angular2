@@ -3,7 +3,7 @@ import { IonicApp, IonicModule } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
-import { HomePage } from '../pages/home/home';
+import { TodayTipsPage } from '../pages/today-tips/today-tips';
 import { TabsPage } from '../pages/tabs/tabs';
 
 @NgModule({
@@ -11,7 +11,7 @@ import { TabsPage } from '../pages/tabs/tabs';
     MyApp,
     AboutPage,
     ContactPage,
-    HomePage,
+    TodayTipsPage,
     TabsPage
   ],
   imports: [
@@ -22,7 +22,7 @@ import { TabsPage } from '../pages/tabs/tabs';
     MyApp,
     AboutPage,
     ContactPage,
-    HomePage,
+    TodayTipsPage,
     TabsPage
   ],
   providers: []
