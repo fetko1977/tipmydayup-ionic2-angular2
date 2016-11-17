@@ -14,3 +14,70 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+// Imports -----------------------------
+@import 'fonts';
+@import 'variables';
+@import 'mixins';
+// Imports End -------------------------
+
+// Styles Starts -----------------------
+
+// Common ------------------------------
+body {
+    font-family: $oswald;
+}
+
+// Header ------------------------------
+.header-md {
+    border-bottom: 10px solid $white;
+    @include box-shadow($x: 2px, $y: 0, $blur: 5px, $color: rgba(0,0,0,.6), $inset: "");
+    .toolbar-background-md {
+        background: $green;
+    }
+
+    .toolbar-title-md {
+        text-align: right;
+        color: $white;
+        @include text-shadow();
+        font-family: $oswald_bold;
+
+        .tmdu-title-icon {
+            margin-right: 10px;
+        }
+    }
+}
+
+// Tabbar ---------------------------
+.tabs-md {
+    .tabbar {
+        background: $green;
+        color: $white;
+        border-top: 10px solid $white;
+        @include box-shadow($x: -2px, $y: 0, $blur: 5px, $color: rgba(0,0,0,.6), $inset: "");
+
+        a {
+            color: $white;
+            font-family: $oswald_bold;
+            @include text-shadow();
+            background: $green;
+            border-right: 1px solid $white;
+            &:hover {
+                opacity: 1;
+                background: $blue
+            }
+        }
+
+        .tab-button[aria-selected=true] {
+            color: $white;
+            background: $blue
+        }
+
+        .tab-button-text {
+            padding: 5px;
+        }
+    }
+}
+
+
+// Styles End -----------------------
