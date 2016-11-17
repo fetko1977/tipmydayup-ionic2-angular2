@@ -7,9 +7,13 @@ import { NavController } from 'ionic-angular';
   templateUrl: 'today-tips.html'
 })
 export class TodayTipsPage {
-
+  public todayTips = '';
   constructor(public navCtrl: NavController) {
+    this.getTodayTips();
+  }
 
+  private getTodayTips() {
+    this.todayTips = 'Bla';
   }
 
 }

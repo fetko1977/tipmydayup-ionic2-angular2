@@ -1,0 +1,20 @@
+@font-face {
+    font-family: 'Oswald';
+    src: url('../assets/fonts/Oswald-Regular.ttf') format('truetype');
+}
+
+$oswald: 'Oswald', sans-serif;
+
+@font-face {
+    font-family: 'OswaldLight';
+    src: url('../assets/fonts/Oswald-Light.ttf') format('truetype');
+}
+
+$oswald_light: 'OswaldLight', sans-serif;
+
+@font-face {
+    font-family: 'OswaldBold';
+    src: url('../assets/fonts/Oswald-Bold.ttf') format('truetype');
+}
+
+$oswald_bold: 'OswaldBold', sans-serif;
