@@ -2,18 +2,18 @@ import { Component } from '@angular/core';
 
 import { NavController } from 'ionic-angular';
 
+import {TipsDataService} from '../../providers/tips-data-service';
+
 @Component({
   selector: 'page-today-tips',
-  templateUrl: 'today-tips.html'
+  templateUrl: 'today-tips.html',
+  providers: [TipsDataService]
 })
-export class TodayTipsPage {
-  public todayTips = '';
-  constructor(public navCtrl: NavController) {
-    this.getTodayTips();
-  }
 
-  private getTodayTips() {
-    this.todayTips = 'Bla';
+export class TodayTipsPage {
+  
+  constructor(public navCtrl: NavController) {
+    
   }
 
 }
