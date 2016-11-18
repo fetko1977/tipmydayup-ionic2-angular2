@@ -29,20 +29,23 @@ body {
 }
 
 // Header ------------------------------
-.header-md {
+.header-md,
+.header-ios {
     
     @include box-shadow($x: 2px, $y: 0, $blur: 5px, $color: rgba(0,0,0,.6), $inset: "");
-    .toolbar-background-md {
+    .toolbar-background-md, .toolbar-background-ios {
         background: $green;
         border-bottom: 5px solid $white;
     }
 
-    .toolbar-md {
+    .toolbar-md,
+    .toolbar-ios {
         padding: 0;
         min-height: auto;
     }
 
-    .toolbar-title-md {
+    .toolbar-title-md,
+    .toolbar-title-ios {
         text-align: right;
         color: $white;
         @include text-shadow();
@@ -65,7 +68,8 @@ body {
 }
 
 // Tabbar ---------------------------
-.tabs-md {
+.tabs-md,
+.tabs-ios {
     .tabbar {
         background: $green;
         color: $white;
