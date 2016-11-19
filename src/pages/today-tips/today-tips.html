@@ -1,7 +1,7 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      <span class="tmdu-logo-wrapper"><img src="./assets/img/logo.png" /></span><span class="tmdu-title">Today Tips</span>
+      <span class="tmdu-logo-wrapper"><img src="./assets/img/logo.png" /></span>
     </ion-title>
   </ion-navbar>
 </ion-header>
@@ -9,63 +9,95 @@
 <ion-content padding class="today-tips">
   <ion-list>
     <ion-card *ngFor="let tip of todayTips">
-      <ion-row>
+      <ion-item class="tmdu-tip-competition">
         <h3>{{ tip.competition }}</h3>
-      </ion-row>
+      </ion-item>
 
-      <ion-row>
-          <ion-col width-80><p>{{ tip.homeTeam }}</p></ion-col>
-          <ion-col width-20><p>{{ tip.homeTeamGoals }}</p></ion-col>
-      </ion-row>
+      <ion-item class="tmdu-tip-date">
+        <h5>{{ tip.gameStart | date:"dd MMM yyyy" }}</h5>
+      </ion-item>
 
-      <ion-row>
-          <ion-col width-20 class="{{outcome}}" *ngFor="let outcome of tip.homeTeamStats.lastFive">{{outcome}}</ion-col>
-      </ion-row>
+      <ion-item class="tmdu-tip-team-item">
+          <ion-row class="tmdu-team-data">
+              <ion-col width-80><p>{{ tip.homeTeam }}</p></ion-col>
+              <ion-col width-20><p>{{ tip.homeTeamGoals }}</p></ion-col>
+          </ion-row>
 
-      <ion-row>
-          <ion-col width-20 class="tmdu-stats-header">W</ion-col>
-          <ion-col width-20 class="tmdu-stats-header">D</ion-col>
-          <ion-col width-20 class="tmdu-stats-header">L</ion-col>
-          <ion-col width-20 class="tmdu-stats-header">GD</ion-col>
-          <ion-col width-20 class="tmdu-stats-header">Pts.</ion-col>
-      </ion-row>
+          <ion-row class="tmdu-toggle-stats-btn" (click)="showStats($event)">Stats
+              <ion-icon name="podium"></ion-icon>
+          </ion-row>
 
-      <ion-row>
-          <ion-col width-20 class="tmdu-stats-field" *ngFor="let stat of tip.homeTeamStats.headToHeadLastFive">{{stat}}</ion-col>
-      </ion-row>
+          <ion-row class="tmdu-hidden tmdu-stats-item tmdu-stats-title">
+              <h5>Last Five</h5>
+          </ion-row>
 
-      <ion-row>
-          <ion-col width-80><p>{{ tip.guestTeam }}</p></ion-col>
-          <ion-col width-20><p>{{ tip.guestTeamGoals }}</p></ion-col>
-      </ion-row>
-      
-      <ion-row class="tmdu-toggle-stats-btn" (click)="showStats()">
-        Stats<ion-icon name="podium" role="img" class="" aria-label="star"></ion-icon>
-      </ion-row>
+          <ion-row class="tmdu-hidden tmdu-stats-item">
+              <ion-col width-20 class="tmdu-stats-badge {{outcome}}" *ngFor="let outcome of tip.homeTeamStats.lastFive"><p>{{outcome}}</p></ion-col>
+          </ion-row>
 
-      <ion-row *ngIf="true">
-          <h5>Last Five</h5>
-      </ion-row>
+          <ion-row class="tmdu-hidden tmdu-stats-item tmdu-stats-title">
+              <h5>Last Five Head-To-Head</h5>
+          </ion-row>
 
-      <ion-row *ngIf="true">
-          <ion-col width-20 class="{{outcome}}" *ngFor="let outcome of tip.guestTeamStats.lastFive">{{outcome}}</ion-col>
-      </ion-row>
+          <ion-row class="tmdu-hidden tmdu-stats-item tmdu-stats-header-grp">
+              <ion-col width-25 class="tmdu-stats-header">W</ion-col>
+              <ion-col width-25 class="tmdu-stats-header">D</ion-col>
+              <ion-col width-25 class="tmdu-stats-header">L</ion-col>
+              <ion-col width-25 class="tmdu-stats-header">GD</ion-col>
+          </ion-row>
 
-      <ion-row *ngIf="true">
-          <h5>Last Five Head-To-Head</h5>
-      </ion-row>
+          <ion-row class="tmdu-hidden tmdu-stats-item">
+              <ion-col width-25 class="tmdu-stats-field" *ngFor="let stat of tip.homeTeamStats.headToHeadLastFive">{{stat}}</ion-col>
+          </ion-row>
 
-      <ion-row *ngIf="true">
-          <ion-col width-20 class="tmdu-stats-header">W</ion-col>
-          <ion-col width-20 class="tmdu-stats-header">D</ion-col>
-          <ion-col width-20 class="tmdu-stats-header">L</ion-col>
-          <ion-col width-20 class="tmdu-stats-header">GD</ion-col>
-          <ion-col width-20 class="tmdu-stats-header">Pts.</ion-col>
-      </ion-row>
+      </ion-item>
 
-      <ion-row>
-          <ion-col width-20 class="tmdu-stats-field" *ngFor="let stat of tip.guestTeamStats.headToHeadLastFive">{{stat}}</ion-col>
-      </ion-row>
+      <ion-item class="tmdu-tip-team-item">
+
+          <ion-row class="tmdu-team-data">
+              <ion-col width-80><p>{{ tip.guestTeam }}</p></ion-col>
+              <ion-col width-20><p>{{ tip.guestTeamGoals }}</p></ion-col>
+          </ion-row>
+
+          <ion-row class="tmdu-toggle-stats-btn" (click)="showStats($event)">Stats
+              <ion-icon name="podium"></ion-icon>
+          </ion-row>
+
+          <ion-row class="tmdu-hidden tmdu-stats-item tmdu-stats-title">
+              <h5>Last Five</h5>
+          </ion-row>
+
+          <ion-row class="tmdu-hidden tmdu-stats-item">
+              <ion-col width-20 class="tmdu-stats-badge {{outcome}}" *ngFor="let outcome of tip.guestTeamStats.lastFive"><p>{{outcome}}</p></ion-col>
+          </ion-row>
+
+          <ion-row class="tmdu-hidden tmdu-stats-item tmdu-stats-title">
+              <h5>Last Five Head-To-Head</h5>
+          </ion-row>
+
+          <ion-row class="tmdu-hidden tmdu-stats-item tmdu-stats-header-grp">
+              <ion-col width-25 class="tmdu-stats-header">W</ion-col>
+              <ion-col width-25 class="tmdu-stats-header">D</ion-col>
+              <ion-col width-25 class="tmdu-stats-header">L</ion-col>
+              <ion-col width-25 class="tmdu-stats-header">GD</ion-col>
+          </ion-row>
+
+          <ion-row class="tmdu-hidden tmdu-stats-item">
+            <ion-col width-25 class="tmdu-stats-field" *ngFor="let stat of tip.guestTeamStats.headToHeadLastFive">{{stat}}</ion-col>
+          </ion-row>
+      </ion-item>
+
+      <ion-item class="tmdu-tip-info">
+          <ion-row>
+              <ion-col width-50><p class="{{ tip.tipStatus }} tmdu-rounded-block">{{ tip.tipContent }}</p></ion-col>
+              <ion-col width-50><p class="tmdu-coefficient-item tmdu-rounded-block">Odds: {{ tip.coefficient }}</p></ion-col>
+          </ion-row>
+
+          <ion-row>
+              <ion-col width-50><p>{{ tip.gameStart  | date:"HH:mm" }}</p></ion-col>
+              <ion-col width-50 class=""><p class="{{ tip.tipStatus }} tmdu-first-leter tmdu-rounded-block">{{ tip.tipStatus }}</p></ion-col>
+          </ion-row>
+      </ion-item>
     </ion-card>
   </ion-list>
 </ion-content>
