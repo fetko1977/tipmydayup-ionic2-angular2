@@ -7,5 +7,65 @@
 </ion-header>
 
 <ion-content padding class="today-tips">
-  
+  <ion-list>
+    <ion-card *ngFor="let tip of todayTips">
+      <ion-row>
+        <h3>{{ tip.competition }}</h3>
+      </ion-row>
+
+      <ion-row>
+          <ion-col width-80><p>{{ tip.homeTeam }}</p></ion-col>
+          <ion-col width-20><p>{{ tip.homeTeamGoals }}</p></ion-col>
+      </ion-row>
+
+      <ion-row>
+          <ion-col width-20 class="{{outcome}}" *ngFor="let outcome of tip.homeTeamStats.lastFive">{{outcome}}</ion-col>
+      </ion-row>
+
+      <ion-row>
+          <ion-col width-20 class="tmdu-stats-header">W</ion-col>
+          <ion-col width-20 class="tmdu-stats-header">D</ion-col>
+          <ion-col width-20 class="tmdu-stats-header">L</ion-col>
+          <ion-col width-20 class="tmdu-stats-header">GD</ion-col>
+          <ion-col width-20 class="tmdu-stats-header">Pts.</ion-col>
+      </ion-row>
+
+      <ion-row>
+          <ion-col width-20 class="tmdu-stats-field" *ngFor="let stat of tip.homeTeamStats.headToHeadLastFive">{{stat}}</ion-col>
+      </ion-row>
+
+      <ion-row>
+          <ion-col width-80><p>{{ tip.guestTeam }}</p></ion-col>
+          <ion-col width-20><p>{{ tip.guestTeamGoals }}</p></ion-col>
+      </ion-row>
+      
+      <ion-row class="tmdu-toggle-stats-btn" (click)="showStats()">
+        Stats<ion-icon name="podium" role="img" class="" aria-label="star"></ion-icon>
+      </ion-row>
+
+      <ion-row *ngIf="true">
+          <h5>Last Five</h5>
+      </ion-row>
+
+      <ion-row *ngIf="true">
+          <ion-col width-20 class="{{outcome}}" *ngFor="let outcome of tip.guestTeamStats.lastFive">{{outcome}}</ion-col>
+      </ion-row>
+
+      <ion-row *ngIf="true">
+          <h5>Last Five Head-To-Head</h5>
+      </ion-row>
+
+      <ion-row *ngIf="true">
+          <ion-col width-20 class="tmdu-stats-header">W</ion-col>
+          <ion-col width-20 class="tmdu-stats-header">D</ion-col>
+          <ion-col width-20 class="tmdu-stats-header">L</ion-col>
+          <ion-col width-20 class="tmdu-stats-header">GD</ion-col>
+          <ion-col width-20 class="tmdu-stats-header">Pts.</ion-col>
+      </ion-row>
+
+      <ion-row>
+          <ion-col width-20 class="tmdu-stats-field" *ngFor="let stat of tip.guestTeamStats.headToHeadLastFive">{{stat}}</ion-col>
+      </ion-row>
+    </ion-card>
+  </ion-list>
 </ion-content>

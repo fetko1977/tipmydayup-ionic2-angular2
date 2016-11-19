@@ -10,9 +10,13 @@ import 'rxjs/add/operator/map';
 */
 @Injectable()
 export class TipsDataService {
-
+  
   constructor(public http: Http) {
-    console.log('Hello TipsDataService Provider');
+
+  }
+
+  getTodayTips(){
+    
   }
 
 }
