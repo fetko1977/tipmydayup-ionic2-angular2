@@ -14,7 +14,7 @@
       </ion-item>
 
       <ion-item class="tmdu-tip-date">
-        <h5>{{ tip.gameStart | date:"dd MMM yyyy" }}</h5>
+        <h5>{{ tip.gameStart.date }}</h5>
       </ion-item>
 
       <ion-item class="tmdu-tip-team-item">
@@ -94,7 +94,7 @@
           </ion-row>
 
           <ion-row>
-              <ion-col width-50><p>{{ tip.gameStart  | date:"HH:mm" }}</p></ion-col>
+              <ion-col width-50><p>{{ tip.gameStart.hours }}</p></ion-col>
               <ion-col width-50 class=""><p class="{{ tip.tipStatus }} tmdu-first-leter tmdu-rounded-block">{{ tip.tipStatus }}</p></ion-col>
           </ion-row>
       </ion-item>

@@ -34,7 +34,10 @@ export class TodayTipsPage {
           },
           "tipContent": "Home Win",
           "coefficient": "2.5",
-          "gameStart": "2016-02-26 17:00:00",
+          "gameStart": {
+              "date": "2016-02-26",
+              "hours": "17:00:00"
+          },
           "tipStatus": "schedualed",
           "tipOutcome": "awaiting",
           "homeTeamGoals": "0",
@@ -56,7 +59,10 @@ export class TodayTipsPage {
           },
           "tipContent": "Home Win",
           "coefficient": "2.5",
-          "gameStart": "2016-02-26 00:00:00",
+          "gameStart": {
+              "date": "2016-02-26",
+              "hours": "17:00:00"
+          },
           "tipStatus": "schedualed",
           "tipOutcome": "awaiting",
           "homeTeamGoals": "0",
