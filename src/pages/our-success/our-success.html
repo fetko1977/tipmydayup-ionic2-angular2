@@ -7,4 +7,19 @@
 </ion-header>
 
 <ion-content class="page-our-success">
+    <ion-list>
+        <ion-card *ngFor="let successRate of successRates">
+            <ion-item class="tmdu-success-rate-item tmdu-sr-item-header">
+              <h3>{{ successRate.type }}</h3>
+            </ion-item>
+
+            <ion-item class="tmdu-success-rate-item tmdu-sr-item-body">
+              <p>{{ successRate.percentage }} %</p>
+            </ion-item>
+
+            <ion-item class="tmdu-success-rate-item tmdu-sr-item-footer">
+              <p>{{ successRate.successfulTips }} / {{ successRate.totalTips }}</p>
+            </ion-item>
+        </ion-card>
+    </ion-list>
 </ion-content>

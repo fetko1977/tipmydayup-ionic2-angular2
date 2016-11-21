@@ -16,7 +16,8 @@ export class TodayTipsPage {
   constructor(public navCtrl: NavController, public tipsDataService: TipsDataService) {
       this.todayTips = this.getTodayTips();
   }
-
+  
+  //return array
   getTodayTips(){
     return [
         {

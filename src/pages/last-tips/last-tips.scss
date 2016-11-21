@@ -1,3 +1,183 @@
 .page-last-tips {
+    background: $lite_gray;
+    .list-md, .list-ios {
+        .card-md, .card-ios {
+            .tmdu-tip-competition {
+                background: $blue;
+                h3 {
+                    color: $white;
+                    font-family: $oswald;
+                    @include text-shadow();
+                }
 
+                .label-md, .label-ios {
+                    margin: 0;
+                } 
+            }
+
+            .tmdu-tip-date {
+                background: $dark_gray;
+                text-align: right;
+                h5 {
+                    color: $white;
+                    font-family: $oswald;
+                    @include text-shadow();
+                }
+            }
+
+            .tmdu-tip-team-item {
+                border-bottom: 5px solid $dark_gray;
+                .tmdu-team-data {
+                    p {
+                        font-size: 18px;
+                        font-weight: bold;
+                        line-height: 26px;
+                        font-family: $oswald;
+                        color: $dark_gray;
+                    }
+
+                    ion-col:last-child {
+                        p {
+                            font-size: 26px;
+                            text-align: right;
+                            font-family: $oswald;
+                            color: $dark_gray;
+                        }
+                    }
+                }
+
+                .tmdu-toggle-stats-btn {
+                    background: $orange;
+                    color: $white;
+                    font-family: $oswald;
+                    display: inline-block;
+                    width: 80%;
+                    margin: 5px 10% 10px;
+                    @include border-radius(20px);
+                    @include box-shadow();
+                    @include text-shadow();
+                    text-align: center;
+                    padding: 5px;
+
+                    ion-icon {
+                        margin-left: 5px;
+                    }
+                }
+
+                .tmdu-stats-item {
+
+
+                    &.tmdu-stats-title {
+                        background: $dark_gray;
+                        padding: 5px;
+                        align-content: center;
+                        justify-content: center;
+                        h5 {
+                            color: $white;
+                            font-size: 14px;
+                            font-family: $oswald;
+                        }
+                    }
+
+                    ion-col {
+                        text-align: center;
+
+                        &.tmdu-stats-field {
+                            font-weight: bold;
+                            font-family: $oswald;
+                            font-size: 12px;
+                        }
+                    }
+
+                    &.tmdu-stats-header-grp {
+                        background: $medium_gray;
+                        .tmdu-stats-header {
+                            color: $white;
+                            @include text-shadow(1px, 1px, 2px, rgba(0, 0, 0, .7));
+                            font-family: $oswald;
+                            font-size: 12px;
+                        }
+                    }
+
+                    
+
+                    .tmdu-stats-badge {
+                        p {
+                            display: inline-block;
+                            margin: 0 auto;
+                            /*padding: 2px 10px;*/
+                            width: 30px;
+                            height: 30px;
+                            font-size: 12px;
+                            line-height: 30px;
+                            font-family: $oswald;
+                            @include border-radius(15px);
+                            color: $white;
+                            @include text-shadow();
+                            @include box-shadow();
+                        }
+
+                        &.W {
+                            p {
+                                background: $green;
+                            }
+                            
+                        }
+
+                        &.D {
+                            p {
+                                background: $orange;
+                            }
+                            
+                        }
+
+                        &.L {
+                            p {
+                                background: $red;
+                            }
+                            
+                        }
+                    }
+
+                }
+
+                ion-row {
+                    ion-col {
+                        padding: 5px 0;
+                    }
+                }
+            }
+
+            .tmdu-tip-info {
+                background: $dark_gray;
+                border-bottom: 10px solid $blue;
+                ion-row {
+                    
+                    &::first-child {
+
+                    }
+
+                    &::last-child {
+                        
+                    }
+
+                    ion-col {
+                        text-align: center;
+                        p {
+                            color: $white;
+                            font-weight: bold;
+                            display: inline-block;
+                            padding: 5px 15px;
+                            margin: 0 auto;
+
+                            &.tmdu-coefficient-item {
+                                background: $blue;
+                                @include text-shadow(1px, 1px, 2px, rgba(0,0,0,.6));
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

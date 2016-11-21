@@ -1,3 +1,46 @@
 .page-our-success {
-    
+    background: $lite_gray;
+    ion-list {
+        ion-card {
+            margin-bottom: 30px;
+            .tmdu-success-rate-item {
+                font-family: $oswald;
+                text-align: center;
+
+                h3 {
+                    font-size: 20px;
+                }
+
+                p {
+                    font-size: 18px;
+                }
+                
+
+                &.tmdu-sr-item-header {
+                    background: $dark_gray;
+                    h3 {
+                         color: $white;
+                         @include text-shadow();
+                    }
+                   
+                }
+
+                &.tmdu-sr-item-body {
+                    
+                    p {
+                        font-size: 50px;
+                        color: $dark_gray;
+                    }
+                }
+
+                &.tmdu-sr-item-footer {
+                    background: $orange;
+                    p {
+                        color: $white;
+                        @include text-shadow();
+                    }
+                }
+            }
+        }
+    }
 }

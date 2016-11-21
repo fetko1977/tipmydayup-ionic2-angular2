@@ -40,12 +40,24 @@ body {
 
 .tmdu-rounded-block {
     text-align: center;
-    @include border-radius();
+    @include border-radius(10px);
     @include text-shadow(1px, 1px, 2px, rgba(0,0,0,.6));
 }
 
-.schedualed {
+.schedualed, .awaiting {
     background: $orange;
+}
+
+.success, .started {
+    background: $green;
+}
+
+.fail {
+    background: $red;
+}
+
+.finished {
+    background: none;
 }
 
 // Header ------------------------------
@@ -91,26 +103,23 @@ body {
 .tabs-md,
 .tabs-ios {
     .tabbar {
-        background: $green;
+        background: $blue;
         color: $white;
-        border-top: 10px solid $white;
+        border-top: 5px solid $white;
         @include box-shadow($x: -2px, $y: 0, $blur: 5px, $color: rgba(0,0,0,.6), $inset: "");
 
         a {
             color: $white;
             font-family: $oswald_bold;
             @include text-shadow();
-            background: $green;
-            border-right: 1px solid $white;
+            background: $blue;
             &:hover {
                 opacity: 1;
-                background: $blue
             }
         }
 
         .tab-button[aria-selected=true] {
             color: $white;
-            background: $blue
         }
 
         .tab-button-text {
