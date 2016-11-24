@@ -10,13 +10,15 @@ import 'rxjs/add/operator/map';
 */
 @Injectable()
 export class TipsDataService {
-  
-  constructor(public http: Http) {
-
-  }
-
-  getTodayTips(){
+    public todayTips: any;
     
-  }
+    constructor(private http: Http) {
+        this.todayTips = this.getTodayTips();
+    }
+
+    getTodayTips(){
+        var url = 'http://fetkolightadmin.info/TipMyDayUp-Admin/public/tips/today';
+        return this.http.get(url).map(response => response.json());
+    }
 
 }

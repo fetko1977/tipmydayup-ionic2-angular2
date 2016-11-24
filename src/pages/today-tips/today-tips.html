@@ -8,18 +8,19 @@
 
 <ion-content padding class="today-tips">
   <ion-list>
+    <ion-card>{{todayTipsLength}}</ion-card>
     <ion-card *ngFor="let tip of todayTips">
       <ion-item class="tmdu-tip-competition">
         <h3>{{ tip.competition }}</h3>
       </ion-item>
 
       <ion-item class="tmdu-tip-date">
-        <h5>{{ tip.gameStart.date }}</h5>
+        <h5>{{ tip.game_start.date }}</h5>
       </ion-item>
 
       <ion-item class="tmdu-tip-team-item">
           <ion-row class="tmdu-team-data">
-              <ion-col width-80><p>{{ tip.homeTeam }}</p></ion-col>
+              <ion-col width-80><p>{{ tip.homeTeamName }}</p></ion-col>
               <ion-col width-20><p>{{ tip.homeTeamGoals }}</p></ion-col>
           </ion-row>
 
@@ -55,7 +56,7 @@
       <ion-item class="tmdu-tip-team-item">
 
           <ion-row class="tmdu-team-data">
-              <ion-col width-80><p>{{ tip.guestTeam }}</p></ion-col>
+              <ion-col width-80><p>{{ tip.guestTeamName }}</p></ion-col>
               <ion-col width-20><p>{{ tip.guestTeamGoals }}</p></ion-col>
           </ion-row>
 
@@ -94,7 +95,7 @@
           </ion-row>
 
           <ion-row>
-              <ion-col width-50><p>{{ tip.gameStart.hours }}</p></ion-col>
+              <ion-col width-50><p>{{ tip.game_start.hours }}</p></ion-col>
               <ion-col width-50 class=""><p class="{{ tip.tipStatus }} tmdu-first-leter tmdu-rounded-block">{{ tip.tipStatus }}</p></ion-col>
           </ion-row>
       </ion-item>

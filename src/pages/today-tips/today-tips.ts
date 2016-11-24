@@ -13,69 +13,24 @@ import {TipsDataService} from '../../providers/tips-data-service';
 
 export class TodayTipsPage {
   public todayTips: any;
+  public todayTipsLength: any;
+  
   constructor(public navCtrl: NavController, public tipsDataService: TipsDataService) {
-      this.todayTips = this.getTodayTips();
+      this.getTodayTips();
   }
   
-  //return array
-  getTodayTips(){
-    return [
-        {
-          "id": 1,
-          "competition": "English Premiere League",
-          "homeTeam": "Liverpool",
-          "homeTeamStats": {
-              "lastFive": ["W", "W", "W", "W", "W"],
-              "headToHeadLastFive": [5, 0, 0, "15:0"]
-          },
-          "guestTeam": "Manchester United",
-          "guestTeamStats": {
-              "lastFive" : ["W", "L", "D", "L", "W"],
-              "headToHeadLastFive": [0, 0, 5, "0:15"]
-          },
-          "tipContent": "Home Win",
-          "coefficient": "2.5",
-          "gameStart": {
-              "date": "2016-02-26",
-              "hours": "17:00:00"
-          },
-          "tipStatus": "schedualed",
-          "tipOutcome": "awaiting",
-          "homeTeamGoals": "0",
-          "guestTeamGoals": "0"
-        },
-
-        {
-          "id": 2,
-          "competition": "English Premiere League",
-          "homeTeam": "Aresenal",
-          "homeTeamStats": {
-              "lastFive": ["W", "W", "W", "W", "W"],
-              "headToHeadLastFive": [5, 0, 0, "15:0"]
-          },
-          "guestTeam": "Manchester City",
-          "guestTeamStats": {
-              "lastFive" : ["W", "L", "D", "L", "W"],
-              "headToHeadLastFive": [0, 0, 5, "0:15"]
-          },
-          "tipContent": "Home Win",
-          "coefficient": "2.5",
-          "gameStart": {
-              "date": "2016-02-26",
-              "hours": "17:00:00"
-          },
-          "tipStatus": "schedualed",
-          "tipOutcome": "awaiting",
-          "homeTeamGoals": "0",
-          "guestTeamGoals": "0"
-        }
-    ];
-  };
+  getTodayTips(): void {
+    this.tipsDataService.todayTips.subscribe(
+      todayTips => this.todayTips = todayTips,
+      console.error,
+      //() => console.log("Completed")
+      () => console.log(this.todayTips.length)
+    );
+  }
 
   showStats(event){
       $('.tmdu-tip-team-item').not($(event.target).parents('.tmdu-tip-team-item')).find('.tmdu-stats-item').addClass('tmdu-hidden');
       $(event.target).parents('.tmdu-tip-team-item').find('.tmdu-stats-item').toggleClass('tmdu-hidden');
-      
   }
 
 }
