@@ -4,6 +4,7 @@
         .card-md, .card-ios {
             .tmdu-tip-competition {
                 background: $blue;
+                
                 h3 {
                     color: $white;
                     font-family: $oswald;
@@ -152,6 +153,22 @@
                 background: $dark_gray;
                 border-bottom: 10px solid $blue;
                 ion-row {
+                    &.tmdu-normal-block {
+                        padding: 10px 30px;
+                        text-align: center;
+                        @include box-shadow(2px, 2px, 5px, rgba(0,0,0,.4), "");
+                        margin: 15px auto 0;
+                        border-top-left-radius: 10px;
+                        border-top-right-radius: 10px;
+                        p {
+                            display: block;
+                            width: 100%;
+                            color: $white;
+                            text-transform: uppercase;
+                            font-family: $oswald;
+                            @include text-shadow(1px, 1px, 2px, rgba(0,0,0,.6));
+                        }
+                    }
                     
                     &::first-child {
 
@@ -176,6 +193,10 @@
                             }
                         }
                     }
+                }
+
+                .label-md, .label-ios {
+                    margin: 13px 8px 0 0;
                 }
             }
         }

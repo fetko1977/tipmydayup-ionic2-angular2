@@ -11,13 +11,27 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class TipsDataService {
     public todayTips: any;
+    public lastTips: any;
+    public successRates: any;
     
     constructor(private http: Http) {
         this.todayTips = this.getTodayTips();
+        this.lastTips = this.getLastTips();
+        this.successRates = this.getSuccessRates();
     }
 
     getTodayTips(){
         var url = 'http://fetkolightadmin.info/TipMyDayUp-Admin/public/tips/today';
+        return this.http.get(url).map(response => response.json());
+    }
+
+    getLastTips(){
+        var url = 'http://fetkolightadmin.info/TipMyDayUp-Admin/public/tips/yesterday';
+        return this.http.get(url).map(response => response.json());
+    }
+
+    getSuccessRates() {
+        var url = 'http://fetkolightadmin.info/TipMyDayUp-Admin/public/tips/success-rates';
         return this.http.get(url).map(response => response.json());
     }
 

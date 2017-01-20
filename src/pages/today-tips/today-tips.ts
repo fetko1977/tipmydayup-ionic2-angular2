@@ -23,14 +23,20 @@ export class TodayTipsPage {
     this.tipsDataService.todayTips.subscribe(
       todayTips => this.todayTips = todayTips,
       console.error,
-      //() => console.log("Completed")
-      () => console.log(this.todayTips.length)
+      () => console.log("Completed")
     );
   }
 
   showStats(event){
       $('.tmdu-tip-team-item').not($(event.target).parents('.tmdu-tip-team-item')).find('.tmdu-stats-item').addClass('tmdu-hidden');
       $(event.target).parents('.tmdu-tip-team-item').find('.tmdu-stats-item').toggleClass('tmdu-hidden');
+  }
+
+  refreshTips(refresher){
+    this.getTodayTips();
+    setTimeout(() => {
+      refresher.complete();
+    }, 500);
   }
 
 }

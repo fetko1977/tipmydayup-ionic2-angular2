@@ -7,6 +7,14 @@
 </ion-header>
 
 <ion-content padding class="today-tips">
+    <ion-refresher (ionRefresh)="refreshTips($event)">
+        <ion-refresher-content
+            pullingIcon="arrow-dropdown"
+            pullingText="Pull to refresh"
+            refreshingSpinner="circles"
+            refreshingText="Refreshing...">
+        ></ion-refresher-content>
+    </ion-refresher>
   <ion-list>
     <ion-card>{{todayTipsLength}}</ion-card>
     <ion-card *ngFor="let tip of todayTips">

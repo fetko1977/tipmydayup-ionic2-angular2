@@ -14,12 +14,12 @@
       </ion-item>
 
       <ion-item class="tmdu-tip-date">
-        <h5>{{ tip.gameStart.date }}</h5>
+        <h5>{{ tip.game_start.date }}</h5>
       </ion-item>
 
       <ion-item class="tmdu-tip-team-item">
           <ion-row class="tmdu-team-data">
-              <ion-col width-80><p>{{ tip.homeTeam }}</p></ion-col>
+              <ion-col width-80><p>{{ tip.homeTeamName }}</p></ion-col>
               <ion-col width-20><p>{{ tip.homeTeamGoals }}</p></ion-col>
           </ion-row>
       </ion-item>
@@ -27,7 +27,7 @@
       <ion-item class="tmdu-tip-team-item">
 
           <ion-row class="tmdu-team-data">
-              <ion-col width-80><p>{{ tip.guestTeam }}</p></ion-col>
+              <ion-col width-80><p>{{ tip.guestTeamName }}</p></ion-col>
               <ion-col width-20><p>{{ tip.guestTeamGoals }}</p></ion-col>
           </ion-row>
       </ion-item>
@@ -36,6 +36,9 @@
           <ion-row>
               <ion-col width-50><p class="{{ tip.tipOutcome }} tmdu-rounded-block">{{ tip.tipContent }}</p></ion-col>
               <ion-col width-50><p class="tmdu-coefficient-item tmdu-rounded-block">Odds: {{ tip.coefficient }}</p></ion-col>
+          </ion-row>
+          <ion-row class="tmdu-normal-block big {{ tip.tipOutcome }}">
+              <p>{{ tip.tipOutcome }}</p>
           </ion-row>
       </ion-item>
     </ion-card>

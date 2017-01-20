@@ -1,19 +1,28 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
+import {TipsDataService} from '../../providers/tips-data-service';
+
 @Component({
   selector: 'page-our-success',
-  templateUrl: 'our-success.html'
+  templateUrl: 'our-success.html',
+  providers: [TipsDataService]
 })
 export class OurSuccessPage {
     public successRates: any;
     
-    constructor(public navCtrl: NavController) {
+    constructor(public navCtrl: NavController, public tipsDataService: TipsDataService) {
         this.successRates = this.getSuccessRate();
     }
 
     getSuccessRate() {
-        return [
+        this.tipsDataService.successRates.subscribe(
+              successRates => this.successRates = successRates,
+              console.error,
+              () => console.log("Completed")
+              //() => console.log(this.tipsDataService.successRates)
+        );
+        /*return [
           {
             "type": "Home Win",
             "totalTips": 24,
@@ -68,7 +77,7 @@ export class OurSuccessPage {
             "successfulTips": 1,
             "percentage": 50
           }
-        ]
+        ]*/
     }
 
 }
